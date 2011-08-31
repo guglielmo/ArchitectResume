@@ -32,7 +32,7 @@ $(document).ready(function(){
   <div id="images">
     {% for img in activity.immagine_set.all %}
     	<div>
-        <img src="/uploads/{{img.attach_file}}"/>
+        <img src="/media/{{img.attach_file}}"/>
         <div style="width: 740px; text-align: center">{{img.didascalia}}</div>
       </div>
     {% endfor %}
