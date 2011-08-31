@@ -54,7 +54,7 @@ class Immagine(models.Model):
     return u'%s' % self.didascalia
 
   class Meta:
-    verbose_name_plural = 'schede'
+    verbose_name_plural = 'immagini'
       
 
 class Progetto(models.Model):
