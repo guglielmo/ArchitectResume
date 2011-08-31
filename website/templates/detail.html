@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block head_includes %}
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#menu").jFlow({
+		slides: "#images",
+		//if you got any problems with the contet height, adjust the size below
+		height: "420px",
+		duration: 400
+	});
+});
+</script>
+{% endblock %}
+
+{% block menu %}
+  <li {% ifequal type 'Concorsuale' %} class="jFlowSelected" {% endifequal%}><a href="/?menutab=1">Concorsi</a></li>
+	<li {% ifequal type 'Servizi' %} class="jFlowSelected" {% endifequal%}><a href="/?menutab=2">Architettura</a></li>
+	<li {% ifequal type 'Urbanistica' %} class="jFlowSelected" {% endifequal%}><a href="/?menutab=3">Urbanistica</a></li>
+	<li {% ifequal type 'Consulenza' %} class="jFlowSelected" {% endifequal%}><a href="/?menutab=4">Consulenze</a></li>
+	<li {% ifequal type 'Expertise' %} class="jFlowSelected" {% endifequal%}><a href="/?menutab=5">Expertise</a></li>
+	<li {% ifequal type 'Pubblicazioni' %} class="jFlowSelected" {% endifequal%}><a href="/?menutab=6">Pubblicazioni</a></li>
+{% endblock %}
+
+{% block content %}
+<div id="imagegallery">
+  <ul style="display:none">
+    {% for img in activity.immagine_set.all %}
+    <li class="jFlowControl">0</li>      
+    {% endfor %}
+  </ul>
+  <div id="images">
+    {% for img in activity.immagine_set.all %}
+    	<div>
+        <img src="/uploads/{{img.attach_file}}"/>
+        <div style="width: 740px; text-align: center">{{img.didascalia}}</div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="jFlowPrev">&lt;</div>
+  <div class="jFlowNext">&gt;</div>
+</div>
+
+<div id="works">
+  <h2>{{activity.titolo}}</h2>
+  <div>
+    {{activity.periodo}}, {{activity.luogo}}<br>
+    {% if activity.descrizione_html %}
+      {{activity.descrizione_html|safe}}
+    {% else %}
+      {{activity.descrizione|linebreaks}}    
+    {% endif %}
+  </div>
+  <br/>
+  {% if activity.collaborazioni %}
+    <strong>In collaborazione con</strong>: {{activity.collaborazioni}}<br/>    
+  {% endif %}
+  {% if activity.ruolo %}
+    <strong>Ruolo</strong>: {{activity.ruolo}}<br/>    
+  {% endif %}
+  {% if activity.extended_tipologia  %}
+    <strong>Tipologia</strong>: {{activity.extended_tipologia}}<br/>
+  {% endif %}
+</div>
+
+{% endblock %}

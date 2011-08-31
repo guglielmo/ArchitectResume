@@ -1,0 +1,5 @@
+docs/*
+website/settings_local.py
+*.sqlite
+
+

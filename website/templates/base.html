@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- Your site name -->
+  <title>Luciano Celata {% block title %}{% endblock %}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.flow.1.2.min.js"></script>
+  {% block head_includes %}
+  {% endblock %}
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/reset.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/styles.css" />
+</head>
+<body>
+<div id="all">
+	<div id="header">
+		<!-- Your site name -->
+		<h1>luciano celata</h1>
+		<!-- Contact info -->
+		<p>
+		tel: 336 605891<br />
+		email: <a href="mailto:lc.celata@gmail.com">lc.celata@gmail.com</a>
+		</p>
+	</div>
+	
+	<!-- List of your works, each li element corresponds with a div inside div#works -->
+	<ul id="menu">
+	  {% block menu %}	   
+	  {% endblock %}
+	</ul>
+	
+  {% block content %}      
+  {% endblock %}      
+
+	<div id="footer">
+		<p>
+		<!-- Your copyright information -->
+			&copy; 2011 Luciano Celata. Tutti i diritti riservati.
+		</p>
+	</div>
+</div>
+</body>
+</html>

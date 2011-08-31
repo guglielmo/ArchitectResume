@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block head_includes %}
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#menu").jFlow({
+		slides: "#works",
+		//if you got any problems with the contet height, adjust the size below
+		height: "700px",
+		duration: 400
+	});
+	$("#menu li:nth-child({{menutab}})").click();
+});
+</script>
+{% endblock %}
+
+{% block menu %}
+  <li class="jFlowControl">Concorsi</li>
+	<li class="jFlowControl">Architettura</li>
+	<li class="jFlowControl">Urbanistica</li>
+	<li class="jFlowControl">Consulenze</li>
+	<li class="jFlowControl">Expertise</li>
+	<li class="jFlowControl">Pubblicazioni</li>
+{% endblock %}
+
+{% block content %}
+<div id="works">
+
+	<div><!-- Concorsi -->
+		<img src="/works/concorsuale.jpg" alt="work one" />
+		{% if concorsuale_idee_list %}
+      <h2>Concorsi di idee</h2>
+      <ul>
+        {% for act in concorsuale_idee_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>
+		{% endif %}
+		{% if concorsuale_gara_list %}
+      <h2>Bandi di gara</h2>
+      <ul>
+        {% for act in concorsuale_gara_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>
+    {% endif %}
+	</div>    
+
+	<div><!-- Servizi -->
+		<img src="/works/servizi.jpg" alt="work one" />
+		{% if servizi_sport_list %}
+      <h2>Attrezzature sportive</h2>
+      <ul>
+        {% for act in servizi_sport_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>		  
+		{% endif %}
+		{% if servizi_scola_list %}
+      <h2>Attrezzature scolastiche</h2>
+      <ul>
+        {% for act in servizi_scola_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>
+		{% endif %}
+		{% if servizi_ricer_list %}
+      <h2>Attività di ricerca nei programmi sperimentali per interventi di ERP</h2>
+      <ul>
+        {% for act in servizi_ricer_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>
+		{% endif %}
+		{% if servizi_liber_list %}
+      <h2>Edifici di civile abitazione di iniziativa privata (Edilizia libera)</h2>
+      <ul>
+        {% for act in servizi_liber_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>
+		{% endif %}
+		{% if servizi_conve_list %}
+      <h2>Edifici di civile abitazione di iniziativa pubblica (Edilizia convenzionata)</h2>
+      <ul>
+        {% for act in servizi_conve_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>
+		{% endif %}
+		{% if servizi_sovve_list %}
+      <h2>Edilizia sovvenzionata</h2>
+      <ul>
+        {% for act in servizi_sovve_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>
+		{% endif %}
+		{% if servizi_agevo_list %}
+      <h2>Edilizia agevolata</h2>
+      <ul>
+        {% for act in servizi_agevo_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>
+		{% endif %}
+    
+	</div>    
+
+	<div><!-- Urbanistica -->
+		<img src="/works/urbanistica.jpg" alt="work one" />
+		{% if urbanistica_list %}
+      <h2>Elenco attivit&agrave;</h2>
+      <ul>
+        {% for act in urbanistica_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>		  
+		{% endif %}
+	</div>    
+
+	<div><!-- Consulenze -->
+		<img src="/works/consulenze.jpg" alt="work one" />
+		{% if consulenze_pedil_list %}
+      <h2>Programmi edilizi</h2>
+      <ul>
+        {% for act in consulenze_pedil_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}		  
+  		{% endif %}
+    </ul>
+		{% if consulenze_prog_complessi_list %}
+      <h2>Programmi complessi</h2>
+      <ul>
+        {% for act in consulenze_pcomp_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}		  
+  		{% endif %}
+    </ul>
+	</div>    
+
+	<div><!-- Esperto -->
+		<img src="/works/esperto.jpg" alt="work one" />
+		{% if esperto_list %}
+      <h2>Elenco attivit&agrave;</h2>
+      <ul>
+        {% for act in esperto_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>		  
+		{% endif %}
+	</div>    
+
+	<div><!-- Pubblicista -->
+		<img src="/works/pubblicista.jpg" alt="work one" />
+		{% if pubblicista_list %}
+      <h2>Elenco attivit&agrave;</h2>
+      <ul>
+        {% for act in pubblicista_list %}
+          <li><a href="{{ act.get_absolute_url }}">{{ act.titolo }}</a>, {{ act.periodo}}, {{ act.luogo }}</li>      
+        {% endfor %}
+      </ul>		  
+		{% endif %}
+	</div>    
+
+</div>
+{% endblock %}

@@ -1,0 +1,107 @@
+html {
+	background: #eeeeee url('../images/background.jpg') top center no-repeat;
+}
+
+#all {
+	width:780px;
+	margin:0 auto;
+	font:normal normal normal 14px/20px Arial, Helvetica, sans-serif;
+	color:#666666;
+}
+
+a {
+	color:#333333;
+}
+
+#header {
+	height: 128px;
+}
+
+#header h1 {
+	margin-bottom:20px;
+	display:block;
+	width:440px;
+	height:130px;
+	text-indent:-9999px;
+	overflow:hidden;
+	background: url('../images/logo.jpg') center center no-repeat;
+}
+
+#header p {
+	float:right;
+	position:relative;
+	top:-100px;
+	font:italic normal normal 18px/20px Georgia, serif;
+	color:#999999;
+	text-align:right;
+}
+
+ul#menu li {
+	font:normal normal normal 14px/20px Arial, Helvetica, sans-serif;
+	display:inline;
+	padding:10px 10px;
+	cursor:pointer;
+}
+
+ul#menu li.jFlowSelected {
+	border:1px solid #ffffff;
+	background: #ffffff url('../images/list-background.jpg') center center repeat-x;
+}
+
+ul#menu li a {
+  text-decoration: none;
+}
+
+#images {
+  width: 740px;
+}
+
+#works, #images {
+	margin-top:8px;
+	padding:20px;
+	background:#ffffff;
+}
+
+#works div h2 {
+	padding-top:20px;
+}
+
+#works div p {
+	width:740px;
+}
+
+#imagegallery {
+  position: relative;
+}
+
+#imagegallery .jFlowPrev, #imagegallery .jFlowNext {
+  position: absolute;
+  top: 180px;
+	font:normal normal normal 20px Arial, Helvetica, sans-serif;
+	cursor:pointer;  
+	background-position:center center;
+	background-repeat:repeat-x;;
+	color: black;
+}
+
+#imagegallery .jFlowPrev {
+  left: 3px;
+	background-image:url('../images/left.png');
+}
+
+#imagegallery .jFlowNext {
+  right: 2px;
+	background-image:url('../images/right.png');
+}
+
+#footer {
+	display:block;
+	width:780px;
+	height:80px;
+	background:#fff url('../images/footer-background.jpg') center bottom no-repeat;
+}
+
+#footer p {
+	padding-top:20px;
+	color:#999999;
+}
